@@ -1,13 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return 'GUDANG-SERVICE';
 });
-
-Route::resource('/users', UserController::class);
 
 Route::group(['middleware' => 'after'], function () use ($router) {
     Route::group(['prefix' => 'purchase-order'], function () use ($router) {
