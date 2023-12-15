@@ -114,7 +114,7 @@ class ReceiveController extends Controller
         }, $request->receive_detail);
         
         $receive->Gudang()->createMany($receive_detail);
-        $receive->load(['gudang.item','gudang.sediaan']);
+        $receive->load(['gudang.item']);
 
         return $this->responseFormatter($this->httpCode['StatusOK'], $this->httpMessage['StatusOK'], $receive);
     }
